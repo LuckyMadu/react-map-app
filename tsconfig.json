@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,11 +12,24 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@features/*": ["src/features/*"],
+      "@services": ["src/services"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@redux/*": ["src/redux/*"],
+      "@foundation/*": ["src/foundation/*"],
+      "@models/*": ["src/models/*"],
+      "@constants": ["src/constants"],
+      "@api/*": ["src/api/*"]
+    },
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "extends": "./tsconfig.paths.json"
 }
