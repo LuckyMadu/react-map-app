@@ -6,11 +6,11 @@ const baseQuery = fetchBaseQuery({
   prepareHeaders: (headers, { getState, endpoint }) => {
     headers.set("Content-Type", "application/json");
     headers.set("Accept", "application/json");
-    headers.set("Access-Control-Allow-Origin", "*"); // Allow requests from all origins
+    headers.set("Access-Control-Allow-Origin", "*");
     headers.set(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"
-    ); // Specify allowed headers
+    );
     return headers;
   },
 });
