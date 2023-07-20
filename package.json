@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@craco/craco": "^7.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,6 +14,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "antd": "^5.7.0",
+    "google-map-react": "^2.2.1",
     "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-app-rewire-alias": "^1.1.7",
@@ -49,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/google-map-react": "^2.1.7",
     "@types/lodash.debounce": "^4.0.7",
     "@types/redux-logger": "^3.0.9"
   }

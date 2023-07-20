@@ -7,6 +7,8 @@ type MapModel = {
   gender: string;
   photo: string;
   updatedAt: string;
+  lat: number;
+  long: number;
 };
 
 type MapModelResponse = {

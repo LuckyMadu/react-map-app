@@ -1,1 +1,2 @@
-export { Loader } from "./Loader";
+export { Loader } from "./Loader/Loader";
+export { MapPin } from "./MapPin/MapPin";
