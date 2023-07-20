@@ -21,11 +21,7 @@ const googleMapApiKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY || "";
 export const SearchInput = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState<MapModel | null>(
-    null
-  );
-
-  console.log("selectedLocation----------", selectedLocation);
+  const [searchResults, setSearchResults] = useState<MapModel[]>([]);
 
   // Fetch locations using Redux Toolkit query
   const { isLoading } = useGetLocationsQuery({ query });
@@ -33,9 +29,10 @@ export const SearchInput = () => {
 
   useEffect(() => {
     setLoading(isLoading);
-    // Automatically set the location if there's only one result in the list
-    if (mapState?.results && mapState.results.length === 1) {
-      setSelectedLocation(mapState.results[0]);
+
+    // Update the search results state with the fetched results
+    if (mapState?.results) {
+      setSearchResults(mapState.results);
     }
   }, [isLoading, query, mapState.results]);
 
@@ -55,6 +52,35 @@ export const SearchInput = () => {
     setLoading(isLoading);
   }, [isLoading, query]);
 
+  const calculateMapBounds = (locations: MapModel[]) => {
+    if (locations.length === 0) return null;
+
+    let minLat = locations[0].lat;
+    let maxLat = locations[0].lat;
+    let minLng = locations[0].long;
+    let maxLng = locations[0].long;
+
+    for (let i = 1; i < locations.length; i++) {
+      const { lat, long } = locations[i];
+      minLat = Math.min(minLat, lat);
+      maxLat = Math.max(maxLat, lat);
+      minLng = Math.min(minLng, long);
+      maxLng = Math.max(maxLng, long);
+    }
+
+    const center = {
+      lat: (minLat + maxLat) / 2,
+      lng: (minLng + maxLng) / 2,
+    };
+
+    const bounds = {
+      nw: { lat: maxLat, lng: minLng },
+      se: { lat: minLat, lng: maxLng },
+    };
+
+    return { center, bounds };
+  };
+
   return (
     <div>
       <div>
@@ -69,7 +95,7 @@ export const SearchInput = () => {
           <div className="spinner">
             <Spin tip="Loading..." />
           </div>
-        ) : mapState?.results && mapState.results.length && query ? (
+        ) : searchResults.length && query ? (
           <div className="map-container">
             <List
               size="small"
@@ -77,9 +103,7 @@ export const SearchInput = () => {
               bordered
               dataSource={mapState.results}
               renderItem={(item: any) => (
-                <List.Item
-                  onClick={() => setSelectedLocation(item)}
-                >{`${item.firstName} | ${item.lastName}`}</List.Item>
+                <List.Item>{`${item.firstName} | ${item.lastName}`}</List.Item>
               )}
             />
           </div>
@@ -88,23 +112,24 @@ export const SearchInput = () => {
         )}
       </div>
       <div>
-        {selectedLocation && (
+        {query && searchResults.length > 0 && (
           <div style={{ height: "100vh", width: "100%" }}>
             <GoogleMapReact
               bootstrapURLKeys={{
                 key: googleMapApiKey,
               }}
-              defaultCenter={{
-                lat: selectedLocation.lat,
-                lng: selectedLocation.long,
-              }}
-              defaultZoom={8}
+              defaultCenter={{ lat: 0, lng: 0 }}
+              defaultZoom={5}
+              {...calculateMapBounds(searchResults)}
             >
-              <MapPin
-                lat={selectedLocation.lat}
-                lng={selectedLocation.long}
-                text={selectedLocation.firstName}
-              />
+              {searchResults?.map((location, index) => (
+                <MapPin
+                  key={index}
+                  lat={location.lat}
+                  lng={location.long}
+                  text={location.firstName}
+                />
+              ))}
             </GoogleMapReact>
           </div>
         )}

@@ -1,5 +1,6 @@
 import { PushpinOutlined } from "@ant-design/icons";
 import { Tag } from "antd";
+import "./MapPin.styles.css";
 
 type MapPinProps = {
   text: string;
@@ -8,16 +9,11 @@ type MapPinProps = {
 };
 
 export const MapPin = ({ text }: MapPinProps) => (
-  <Tag
-    icon={<PushpinOutlined />}
-    color="#cd201f"
-    style={{
-      padding: 10,
-      fontSize: 20,
-    }}
-  >
-    {text}
-  </Tag>
+  <div className="map-pin">
+    <Tag icon={<PushpinOutlined />} color="#cd201f">
+      {text}
+    </Tag>
+  </div>
 );
 
 export default MapPin;
