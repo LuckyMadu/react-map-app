@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface NoticeboardState {
+interface MapState {
   results: any;
 }
 
-const initialState: NoticeboardState = {
+const initialState: MapState = {
   results: [],
 };
 
@@ -12,11 +12,12 @@ const mapSlice = createSlice({
   name: "map",
   initialState,
   reducers: {
-    setNoticeboards(state, action) {
-      state.results = action.payload;
+    setMapData(state, action) {
+      const { data } = action.payload;
+      state.results = data.data;
     },
   },
 });
 
-export const { setNoticeboards } = mapSlice.actions;
+export const { setMapData } = mapSlice.actions;
 export default mapSlice.reducer;

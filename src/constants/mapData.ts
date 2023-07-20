@@ -1,4 +1,4 @@
-export const mapData = {
+export const MAP_DATA = {
   predictions: [
     {
       description:

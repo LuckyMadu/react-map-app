@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { Layout, Space } from "antd";
-import { SearchInput } from "../../components/molecules";
+import { SearchInput } from "@components/molecules";
 import { useGetLocationsQuery } from "../../services/map/map";
+import { Loader } from "../../components/atoms";
 
 const { Header } = Layout;
 
@@ -15,10 +16,6 @@ const headerStyle: React.CSSProperties = {
 };
 
 const App: FC = () => {
-  // Initiate map API calls
-  const { isLoading: isLoadingLocations } = useGetLocationsQuery({
-    query: "malaysia",
-  });
   return (
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <Layout>
