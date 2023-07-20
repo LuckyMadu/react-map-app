@@ -1,13 +1,13 @@
-import { baseApi } from "../../api/baseApi";
 // models
-import { MapModelResponse, SearchProps } from "../../models/map/Map";
+import { MapModelResponse, SearchProps } from "@models/map/Map";
 // utils
-import { API_ENDPOINTS } from "../../constants";
-import { setMapData } from "../../redux/slices/mapSlice";
+import { baseApi } from "@api/baseApi";
+import { API_ENDPOINTS } from "@constants";
+import { setMapData } from "@redux/slices/mapSlice";
 
 export const mapApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getLocations: builder.query<any, SearchProps>({
+    getLocations: builder.query<MapModelResponse, SearchProps>({
       query({ query }) {
         // GOOGLE MAP PLACES API
         // return {

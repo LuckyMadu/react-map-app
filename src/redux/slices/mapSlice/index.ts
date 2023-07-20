@@ -1,7 +1,8 @@
+import { MapModel } from "@models/map/Map";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface MapState {
-  results: any;
+  results: MapModel[];
 }
 
 const initialState: MapState = {

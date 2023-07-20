@@ -1,15 +1,19 @@
-import { Button, DatePicker, Space, version } from "antd";
 import { Provider } from "react-redux";
-import Home from "../features/Home/Home";
-import { store } from "../redux/store";
+import { Card, Space } from "antd";
+// components
+import Home from "@features/Home/Home";
+// redux
+import { store } from "@redux/store";
 
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+        <Card size="small">
+          <Home />
+        </Card>
+      </Space>
+    </Provider>
   );
 }
 

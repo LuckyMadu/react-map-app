@@ -14,14 +14,11 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
-      "@components": ["src/components"],
       "@components/*": ["src/components/*"],
       "@features/*": ["src/features/*"],
-      "@services": ["src/services"],
       "@services/*": ["src/services/*"],
       "@utils/*": ["src/shared/utils/*"],
       "@redux/*": ["src/redux/*"],
-      "@foundation/*": ["src/foundation/*"],
       "@models/*": ["src/models/*"],
       "@constants": ["src/constants"],
       "@api/*": ["src/api/*"]
@@ -30,6 +27,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
-  "extends": "./tsconfig.paths.json"
+  "include": ["src"]
 }
