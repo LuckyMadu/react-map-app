@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import GoogleMapReact from "google-map-react";
-import { Input, List, Spin, Tag } from "antd";
+import { Input, List, Spin, Tag, Row, Col } from "antd";
 import debounce from "lodash.debounce";
 // utils
 import { calculateMapBounds } from "@utils";
@@ -55,8 +55,8 @@ export const SearchInput = () => {
   }, [isLoading, query]);
 
   return (
-    <div>
-      <div>
+    <Row gutter={16}>
+      <Col xs={24} sm={12} md={10} lg={8} xl={6}>
         <Search
           placeholder="Enter location"
           allowClear
@@ -83,8 +83,8 @@ export const SearchInput = () => {
         ) : (
           <Tag>Search it or No result found...</Tag>
         )}
-      </div>
-      <div>
+      </Col>
+      <Col xs={24} sm={12} md={14} lg={16} xl={18}>
         {query && searchResults.length > 0 && (
           <div style={{ height: "100vh", width: "100%" }}>
             <GoogleMapReact
@@ -106,8 +106,8 @@ export const SearchInput = () => {
             </GoogleMapReact>
           </div>
         )}
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 
