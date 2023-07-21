@@ -34,6 +34,9 @@
 - Redux Toolkit 1.9 <https://redux-toolkit.js.org/>
 - RTK Query 1.9 <https://redux-toolkit.js.org/rtk-query/overview>
 
+#### Note
+- A CORS issue has been identified with the Google Places API while attempting to fetch location data. To address this matter, an alternative solution has been implemented by utilizing a custom API to access specific locations situated in Malaysia.
+
 
 ## Getting Started
 
