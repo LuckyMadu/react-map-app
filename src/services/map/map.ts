@@ -2,7 +2,6 @@
 import { MapModelResponse, SearchProps } from "@models/map/Map";
 // utils
 import { baseApi } from "@api/baseApi";
-import { API_ENDPOINTS } from "@constants";
 import { setMapData } from "@redux/slices/mapSlice";
 
 export const mapApi = baseApi.injectEndpoints({
@@ -14,7 +13,7 @@ export const mapApi = baseApi.injectEndpoints({
         //   url: `${API_ENDPOINTS.MAP_API.MAP_ENDPOINT}${query}&types=restaurant&key=${process.env.REACT_APP_MAP_API_KEY}`,
         // };
         return {
-          url: `${API_ENDPOINTS.MAP_API.DUMMY_ENDPOINT}/employee/search?query=${query}`,
+          url: `${process.env.REACT_APP_BASE_URL}/employee/search?query=${query}`,
         };
       },
       async onQueryStarted(_args, { dispatch, queryFulfilled }) {
