@@ -49,14 +49,6 @@ To run the production build of the application, run:
 npm start
 ```
 
-This will start the production server at http://localhost:3000.
-![Screenshot 2023-07-20 at 23 16 52]()
-
-![Screenshot 2023-07-20 at 23 16 59](https://github.com/LuckyMadu/react-map-app/assets/19740478/6c2fedad-802d-4b60-857b-f2fd93a18711)
-
-
-
-
 <table>
   <tr>
     <td>Home - Search Input</td>
