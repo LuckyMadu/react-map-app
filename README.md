@@ -28,6 +28,7 @@
 - Ant Design
 - TypeScript 4 <https://www.typescriptlang.org/>
 - Redux Toolkit 1.9 <https://redux-toolkit.js.org/>
+- Redux thunk middleware / Redux logger
 - RTK Query 1.9 <https://redux-toolkit.js.org/rtk-query/overview>
 
 #### Note
