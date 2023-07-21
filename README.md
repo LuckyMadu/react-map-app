@@ -3,10 +3,6 @@
     <td>Frontend</td>
     <td>https://react-map-app-livid.vercel.app/</td>
   </tr>
-   <tr>
-    <td>API Endpoint</td>
-    <td>https://employee-management-backend.vercel.app </td>
-  </tr>
 </table>
 
 <table>
