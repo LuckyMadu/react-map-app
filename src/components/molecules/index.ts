@@ -1,1 +1,1 @@
-export { SearchInput } from "./SearchInput/SearchInput";
+export { MapPin } from "./MapPin/MapPin";

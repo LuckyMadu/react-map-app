@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Layout, Space } from "antd";
-import { SearchInput } from "@components/molecules";
+import { SearchInput } from "@components/organisms";
 
 const App: FC = () => {
   return (

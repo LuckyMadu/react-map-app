@@ -10,7 +10,6 @@ module.exports = function override(config) {
         '@redux': 'src/redux',
         '@services': 'src/services',
         '@features': 'src/features',
-        // Add more aliases as needed
     })(config);
 
     return config;

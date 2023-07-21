@@ -3,8 +3,10 @@ import { useSelector } from "react-redux";
 import GoogleMapReact from "google-map-react";
 import { Input, List, Spin, Tag } from "antd";
 import debounce from "lodash.debounce";
+// utils
+import { calculateMapBounds } from "@utils";
 // models
-import { MapPin } from "@components/atoms";
+import { MapPin } from "@components/molecules";
 import { MapModel } from "@models/map/Map";
 // services
 import { useGetLocationsQuery } from "@services/map/map";
@@ -51,35 +53,6 @@ export const SearchInput = () => {
   useEffect(() => {
     setLoading(isLoading);
   }, [isLoading, query]);
-
-  const calculateMapBounds = (locations: MapModel[]) => {
-    if (locations.length === 0) return null;
-
-    let minLat = locations[0].lat;
-    let maxLat = locations[0].lat;
-    let minLng = locations[0].long;
-    let maxLng = locations[0].long;
-
-    for (let i = 1; i < locations.length; i++) {
-      const { lat, long } = locations[i];
-      minLat = Math.min(minLat, lat);
-      maxLat = Math.max(maxLat, lat);
-      minLng = Math.min(minLng, long);
-      maxLng = Math.max(maxLng, long);
-    }
-
-    const center = {
-      lat: (minLat + maxLat) / 2,
-      lng: (minLng + maxLng) / 2,
-    };
-
-    const bounds = {
-      nw: { lat: maxLat, lng: minLng },
-      se: { lat: minLat, lng: maxLng },
-    };
-
-    return { center, bounds };
-  };
 
   return (
     <div>
