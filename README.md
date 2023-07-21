@@ -9,17 +9,33 @@
   </tr>
 </table>
 
-
 <table>
   <tr>
     <td>Search Input and Map View</td>
   </tr>
   <tr>
     <td>
-      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
+      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/91a40d62-62f3-49f2-ba49-49b51799b8b9" width=800 height=300>
     </td>
   </tr>
 </table>
+
+#### Principles
+
+- Feature-driven Development (Feature-slice architecture)
+- Atomic Design
+- Keep things simple
+
+#### Core
+
+- React 18 <https://reactjs.org/>
+- Ant Design
+- TypeScript 4 <https://www.typescriptlang.org/>
+- Redux Toolkit 1.9 <https://redux-toolkit.js.org/>
+- RTK Query 1.9 <https://redux-toolkit.js.org/rtk-query/overview>
+
+#### Note
+- A CORS issue has been identified with the Google Places API while attempting to fetch location data. To address this matter, an alternative solution has been implemented by utilizing a custom API to access specific locations situated in Malaysia.
 
 
 ## Getting Started
