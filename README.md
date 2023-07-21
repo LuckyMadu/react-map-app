@@ -1,51 +1,71 @@
-# Getting Started with Create React App
+<table>
+  <tr>
+    <td>Frontend</td>
+    <td>https://react-map-app-livid.vercel.app/</td>
+  </tr>
+   <tr>
+    <td>API Endpoint</td>
+    <td>https://employee-management-backend.vercel.app </td>
+  </tr>
+</table>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+This is a frontend application built using React.js. It also uses an .env file to handle environment variables.
 
-In the project directory, you can run:
+To get started with this project, clone the repository to your local machine:
 
-### `npm start`
+```
+git clone https://github.com/LuckyMadu/react-map-app.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After cloning the repository, navigate to the project directory and install the dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+cd react-map-app
+npm install
+```
 
-### `npm test`
+## Configuration
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project uses an .env file to handle environment variables. You can create an .env file in the root of the project and add your variables to it. For example:
 
-### `npm run build`
+```
+REACT_APP_BASE_URL=
+REACT_APP_GOOGLE_MAP_API_KEY=
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To use the variables in your code, you can use the process.env object. For example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+const apiUrl = process.env.REACT_APP_BASE_URL;
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running
 
-### `npm run eject`
+To run the production build of the application, run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will start the production server at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<table>
+  <tr>
+    <td>Home - Search Input</td>
+    <td>Home - Map View</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://user-images.githubusercontent.com/19740478/230440211-cfda79ff-8898-4c27-b43f-6999149ba77b.png" width=800 height=300>
+    </td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/19740478/230440904-0940bb76-bbba-4e84-91a6-2893f7972187.png" width=800 height=300>
+    </td>
+  </tr>
+</table>
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# react-map-app
-# react-map-app
-# react-map-app
-# react-map-app
-# react-map-app
