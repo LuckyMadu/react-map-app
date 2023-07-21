@@ -9,14 +9,13 @@
   </tr>
 </table>
 
-
 <table>
   <tr>
     <td>Search Input and Map View</td>
   </tr>
   <tr>
     <td>
-      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
+      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/91a40d62-62f3-49f2-ba49-49b51799b8b9" width=800 height=300>
     </td>
   </tr>
 </table>
