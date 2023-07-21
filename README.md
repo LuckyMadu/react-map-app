@@ -51,15 +51,11 @@ npm start
 
 <table>
   <tr>
-    <td>Home - Search Input</td>
-    <td>Home - Map View</td>
+    <td>Search Input and Map View</td>
   </tr>
   <tr>
     <td>
       <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
-    </td>
-    <td>
-      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/6c2fedad-802d-4b60-857b-f2fd93a18711" width=800 height=300>
     </td>
   </tr>
 </table>
