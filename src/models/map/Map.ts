@@ -11,6 +11,10 @@ type MapModel = {
   long: number;
 };
 
+type LocationItemProps = {
+  item: MapModel;
+};
+
 type MapModelResponse = {
   results: MapModel[];
 };
@@ -19,4 +23,4 @@ type SearchProps = {
   query: string;
 };
 
-export type { MapModelResponse, SearchProps, MapModel };
+export type { MapModelResponse, SearchProps, MapModel, LocationItemProps };

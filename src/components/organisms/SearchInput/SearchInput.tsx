@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import GoogleMapReact from "google-map-react";
 import { Input, List, Spin, Tag, Row, Col } from "antd";
@@ -7,7 +7,7 @@ import debounce from "lodash.debounce";
 import { calculateMapBounds } from "@utils";
 // models
 import { MapPin } from "@components/molecules";
-import { MapModel } from "@models/map/Map";
+import { LocationItemProps, MapModel } from "@models/map/Map";
 // services
 import { useGetLocationsQuery } from "@services/map/map";
 // redux
@@ -31,7 +31,6 @@ export const SearchInput = () => {
 
   useEffect(() => {
     setLoading(isLoading);
-
     // Update the search results state with the fetched results
     if (mapState?.results) {
       setSearchResults(mapState.results);
@@ -43,16 +42,23 @@ export const SearchInput = () => {
     setQuery(value);
   }, 500);
 
-  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setLoading(true);
-    debouncedQueryChange(value);
-  };
+  const handleQueryChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setLoading(true);
+      debouncedQueryChange(value);
+    },
+    [debouncedQueryChange]
+  );
 
   // Reset loading state when results are available or query is cleared
   useEffect(() => {
     setLoading(isLoading);
   }, [isLoading, query]);
+
+  const LocationListItem = ({ item }: LocationItemProps) => {
+    return <List.Item>{`${item.firstName} | ${item.lastName}`}</List.Item>;
+  };
 
   return (
     <Row gutter={16}>
@@ -75,9 +81,7 @@ export const SearchInput = () => {
               header={<div className="title-header">Locations List</div>}
               bordered
               dataSource={mapState.results}
-              renderItem={(item: any) => (
-                <List.Item>{`${item.firstName} | ${item.lastName}`}</List.Item>
-              )}
+              renderItem={(item: MapModel) => <LocationListItem item={item} />}
             />
           </div>
         ) : (
