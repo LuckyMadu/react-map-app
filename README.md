@@ -50,6 +50,12 @@ npm start
 ```
 
 This will start the production server at http://localhost:3000.
+![Screenshot 2023-07-20 at 23 16 52]()
+
+![Screenshot 2023-07-20 at 23 16 59](https://github.com/LuckyMadu/react-map-app/assets/19740478/6c2fedad-802d-4b60-857b-f2fd93a18711)
+
+
+
 
 <table>
   <tr>
@@ -58,10 +64,10 @@ This will start the production server at http://localhost:3000.
   </tr>
   <tr>
     <td>
-      <img src="https://user-images.githubusercontent.com/19740478/230440211-cfda79ff-8898-4c27-b43f-6999149ba77b.png" width=800 height=300>
+      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
     </td>
     <td>
-      <img src="https://user-images.githubusercontent.com/19740478/230440904-0940bb76-bbba-4e84-91a6-2893f7972187.png" width=800 height=300>
+      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/6c2fedad-802d-4b60-857b-f2fd93a18711" width=800 height=300>
     </td>
   </tr>
 </table>
