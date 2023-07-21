@@ -20,6 +20,20 @@
   </tr>
 </table>
 
+#### Principles
+
+- Feature-driven Development (Feature-slice architecture)
+- Atomic Design
+- Keep things simple
+
+#### Core
+
+- React 18 <https://reactjs.org/>
+- Ant Design
+- TypeScript 4 <https://www.typescriptlang.org/>
+- Redux Toolkit 1.9 <https://redux-toolkit.js.org/>
+- RTK Query 1.9 <https://redux-toolkit.js.org/rtk-query/overview>
+
 
 ## Getting Started
 
