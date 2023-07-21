@@ -9,6 +9,19 @@
   </tr>
 </table>
 
+
+<table>
+  <tr>
+    <td>Search Input and Map View</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
+    </td>
+  </tr>
+</table>
+
+
 ## Getting Started
 
 This is a frontend application built using React.js. It also uses an .env file to handle environment variables.
@@ -48,17 +61,6 @@ To run the production build of the application, run:
 ```
 npm start
 ```
-
-<table>
-  <tr>
-    <td>Search Input and Map View</td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/LuckyMadu/react-map-app/assets/19740478/2e3b882c-31d1-49fa-a65e-c8f0ed5d83d3" width=800 height=300>
-    </td>
-  </tr>
-</table>
 
 ## Learn More
 
